@@ -88,8 +88,8 @@ class MahasiswaController extends Controller
             'nrp' => 'required',
         ]);
 
-        $pengumuman = Mahasiswa::findOrFail($id);
-        $pengumuman->update($validatedData);
+        $mahasiswa = Mahasiswa::findOrFail($id);
+        $mahasiswa->update($validatedData);
         return redirect()->route('home')->with('edit_data', 'Pengeditan Data berhasil');
     }
 
@@ -102,8 +102,8 @@ class MahasiswaController extends Controller
     public function destroy($id)
     {
 
-        $pengumuman = Mahasiswa::findOrFail($id);
-        $pengumuman->delete();
+        $mahasiswa = Mahasiswa::findOrFail($id);
+        $mahasiswa->delete();
 		return redirect()->route('home')->with('hapus_data', 'Penghapusan data berhasil');
     }
 }
